@@ -7,8 +7,8 @@ import_dependencies <- function() {
     return(test == 1)
   }
   
-  packages <- c("tidyr", "dplyr", "purrr")
-  uninstalled <- packages[!c(sapply(packages, is_installed))]
+  packages <- c("ISLR2", "tidyr", "dplyr", "purrr", "ggplot2")
+  uninstalled <- packages[!c(sapply(packages, is_installed)) & packages != "ISLR2"]
   
   install.packages(uninstalled)
   invisible(lapply(packages, library, character.only = TRUE))
